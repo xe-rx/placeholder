@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1lc3t7sk4pdm"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_s816q"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_s816q")
+
+[node name="current_level" type="Label" parent="."]
+offset_left = 18.0
+offset_top = 17.0
+offset_right = 63.0
+offset_bottom = 40.0
+text = "LVL. 1"
+metadata/_edit_use_anchors_ = true
+
+[node name="gem_balance" type="Label" parent="."]
+offset_left = 18.0
+offset_top = 44.0
+offset_right = 80.0
+offset_bottom = 67.0
+text = "GEMS: 0"

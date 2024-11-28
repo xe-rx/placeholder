@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://2hr0fex8qr7e"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_unk33"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_unk33")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 103.0
+offset_right = 1152.0
+offset_bottom = 126.0
+theme_type_variation = &"HeaderLarge"
+text = "Platformant"
+horizontal_alignment = 1
+
+[node name="VFlow" type="VFlowContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 526.0
+offset_top = 224.0
+offset_right = 632.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="VFlow"]
+layout_mode = 2
+text = "START
+"
+
+[node name="settings_button" type="Button" parent="VFlow"]
+layout_mode = 2
+text = "SETTINGS
+"
+
+[node name="toggle_fullscreen" type="Button" parent="VFlow"]
+layout_mode = 2
+text = "FULLSCREEN
+"
+
+[connection signal="pressed" from="VFlow/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VFlow/settings_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VFlow/toggle_fullscreen" to="." method="_on_toggle_fullscreen_pressed"]

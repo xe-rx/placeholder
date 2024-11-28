@@ -1,0 +1,5 @@
+PLATFORMANT
+
+An informant which runs around in a platformer world, gathering intel for his boss for a specific [goal].
+
+Enemies have loyalty bars, which ca nbe lowered by combat, when the loyalty bar is at 0 you can press 'e'to *interrogate* and gain info. This info cna be the solution for a puzzle to proceed, or this such as character description of the next person you must interrogate for your goal.

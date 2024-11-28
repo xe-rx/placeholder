@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgych3jgq5y5"]
+
+[ext_resource type="Texture2D" uid="uid://bdau84ydpaqvy" path="res://UI assets pack 2/UI books & more.png" id="1_8udo1"]
+[ext_resource type="Script" path="res://note.gd" id="1_ox0qm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjh2p"]
+size = Vector2(17.5, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnmgv"]
+atlas = ExtResource("1_8udo1")
+region = Rect2(576, 224, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qimi8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnmgv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Note" type="Area2D"]
+script = ExtResource("1_ox0qm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, -0.5)
+shape = SubResource("RectangleShape2D_gjh2p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qimi8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

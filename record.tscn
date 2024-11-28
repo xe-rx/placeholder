@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://djtbxnx7rgcfc"]
+
+[ext_resource type="Texture2D" uid="uid://bdau84ydpaqvy" path="res://UI assets pack 2/UI books & more.png" id="1_jeigs"]
+
+[node name="record" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(25, 32)
+texture = ExtResource("1_jeigs")
+region_enabled = true
+region_rect = Rect2(463.158, 16.1863, 49.3878, 63.0889)

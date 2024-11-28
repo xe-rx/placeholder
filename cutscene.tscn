@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://crmvbc2gcmg52"]
+
+[ext_resource type="Script" path="res://cutscene.gd" id="1_a00i1"]
+
+[node name="Cutscene" type="Node2D"]
+script = ExtResource("1_a00i1")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 105.0
+offset_bottom = 42.0
+text = "Cutscene"
