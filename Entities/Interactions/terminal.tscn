@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://fmknwgsbikc0"]
+
+[ext_resource type="Texture2D" uid="uid://c3g1jcrcgu8lw" path="res://1-Bit-Sci-Fi(Omniclause)/Monitor/Monitor-Sheet.png" id="1_um0qy"]
+[ext_resource type="Script" path="res://Entities/Interactions/terminal.gd" id="2_3c7gk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1p3y"]
+size = Vector2(61, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_584cg"]
+atlas = ExtResource("1_um0qy")
+region = Rect2(4, 4, 60, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08bbj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_584cg")
+}],
+"loop": true,
+"name": &"computer",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("2_3c7gk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -2.5)
+shape = SubResource("RectangleShape2D_e1p3y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_08bbj")
+animation = &"computer"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
