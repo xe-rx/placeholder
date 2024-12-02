@@ -3,7 +3,7 @@ extends Node
 # For settings later, to disable audio
 var audio :bool = true
 
-var gems_collected : int = 0
+var energyCells_collected : int = 0
 var coins_collected : int = 0
 
 # Called when the node enters the scene tree for the first time.

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://odk4i8dkh433"]
+
+[ext_resource type="Texture2D" uid="uid://ckqyxxgv435a0" path="res://UI/Energy Bar/energy.png" id="1_cqput"]
+
+[resource]
+atlas = ExtResource("1_cqput")
+region = Rect2(192, 0, 25, 0)

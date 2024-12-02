@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://bratjbxqjmj7g"]
+
+[ext_resource type="Script" path="res://UI/Textbox/textbox.gd" id="1_kllq6"]
+[ext_resource type="FontFile" uid="uid://c43ualpniwd3t" path="res://TrueType (.ttf)/PixeloidSans-Bold.ttf" id="1_tpn20"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jce8y"]
+bg_color = Color(0.0235294, 0.0941176, 0.12549, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.85098, 1, 0.835294, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_kllq6")
+
+[node name="TextBoxContainer" type="MarginContainer" parent="."]
+texture_filter = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -147.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="TextBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jce8y")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Panel" type="Panel" parent="TextBoxContainer/MarginContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextBoxContainer/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="Start" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.85098, 1, 0.835294, 1)
+theme_override_fonts/font = ExtResource("1_tpn20")
+theme_override_font_sizes/font_size = 24
+text = "*"
+
+[node name="Content" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.85098, 1, 0.835294, 1)
+theme_override_fonts/font = ExtResource("1_tpn20")
+theme_override_font_sizes/font_size = 24
+text = "The quick brown fox jumped over the fence, this is placeholder text. Just testing whether it looks good or not. Seems to  be the case hihi! :D"
+autowrap_mode = 3
+clip_text = true
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="End" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.85098, 1, 0.835294, 1)
+theme_override_fonts/font = ExtResource("1_tpn20")
+theme_override_font_sizes/font_size = 24
+text = "v"

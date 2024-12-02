@@ -1,0 +1,30 @@
+[gd_scene load_steps=10 format=3 uid="uid://d1tpqp08kfml5"]
+
+[ext_resource type="Script" path="res://UI/Energy Bar/energyBar.gd" id="1_hdca6"]
+[ext_resource type="Texture2D" uid="uid://b2chmiq3nn028" path="res://UI/Energy Bar/energy_stages/stage1.tres" id="2_r8ih0"]
+[ext_resource type="Texture2D" uid="uid://bpyd8adfpih4s" path="res://UI/Energy Bar/energy_stages/stage2.tres" id="3_okk6k"]
+[ext_resource type="Texture2D" uid="uid://d1voobmyblr3d" path="res://UI/Energy Bar/energy_stages/stage3.tres" id="4_oo8b0"]
+[ext_resource type="Texture2D" uid="uid://bf2hixrvbccm5" path="res://UI/Energy Bar/energy_stages/stage4.tres" id="5_a0ka7"]
+[ext_resource type="Texture2D" uid="uid://cgxkp0lk1n0al" path="res://UI/Energy Bar/energy_stages/stage5.tres" id="6_0w7e7"]
+[ext_resource type="Texture2D" uid="uid://devrkvo22qgug" path="res://UI/Energy Bar/energy_stages/stage6.tres" id="7_f3xue"]
+[ext_resource type="Texture2D" uid="uid://odk4i8dkh433" path="res://UI/Energy Bar/energy_stages/stage7.tres" id="8_h2n53"]
+[ext_resource type="Texture2D" uid="uid://cxdm5fkos7631" path="res://UI/Energy Bar/energy_stages/stage8.tres" id="9_d7rlf"]
+
+[node name="energyBar" type="TextureRect"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = 204.0
+offset_right = -129.0
+offset_bottom = 280.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("2_r8ih0")
+stretch_mode = 2
+script = ExtResource("1_hdca6")
+energy_bar_sprites = Array[Texture]([ExtResource("2_r8ih0"), ExtResource("3_okk6k"), ExtResource("4_oo8b0"), ExtResource("5_a0ka7"), ExtResource("6_0w7e7"), ExtResource("7_f3xue"), ExtResource("8_h2n53"), ExtResource("9_d7rlf")])

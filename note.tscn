@@ -1,20 +1,20 @@
 [gd_scene load_steps=6 format=3 uid="uid://cgych3jgq5y5"]
 
-[ext_resource type="Texture2D" uid="uid://bdau84ydpaqvy" path="res://UI assets pack 2/UI books & more.png" id="1_8udo1"]
 [ext_resource type="Script" path="res://note.gd" id="1_ox0qm"]
+[ext_resource type="Texture2D" uid="uid://bc86s2fwn7gri" path="res://Entities/Interactions/note.png" id="2_hqly6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjh2p"]
 size = Vector2(17.5, 19)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lnmgv"]
-atlas = ExtResource("1_8udo1")
-region = Rect2(576, 224, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3wg5"]
+atlas = ExtResource("2_hqly6")
+region = Rect2(0, 0, 26, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qimi8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lnmgv")
+"texture": SubResource("AtlasTexture_h3wg5")
 }],
 "loop": true,
 "name": &"default",
@@ -29,6 +29,7 @@ position = Vector2(-0.25, 0.5)
 shape = SubResource("RectangleShape2D_gjh2p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.557692, 0.557692)
 sprite_frames = SubResource("SpriteFrames_qimi8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

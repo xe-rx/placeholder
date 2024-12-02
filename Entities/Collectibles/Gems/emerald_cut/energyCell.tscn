@@ -1,18 +1,18 @@
 [gd_scene load_steps=7 format=3 uid="uid://dcbm3id1edfss"]
 
-[ext_resource type="Texture2D" uid="uid://dcx8o4p88tfh1" path="res://monochrome_tilemap_transparent.png" id="1_0w15c"]
-[ext_resource type="Script" path="res://Entities/Collectibles/Gems/emerald_cut/gem.gd" id="1_fs7to"]
+[ext_resource type="Script" path="res://Entities/Collectibles/Gems/emerald_cut/energyCell.gd" id="1_fs7to"]
+[ext_resource type="Texture2D" uid="uid://pisqsnonndsu" path="res://UI_global.png" id="2_sbkvn"]
 [ext_resource type="AudioStream" uid="uid://0mjq8chpy3b3" path="res://pickupGem.wav" id="3_e5go3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fwni7"]
-atlas = ExtResource("1_0w15c")
-region = Rect2(34, 85, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j1wd"]
+atlas = ExtResource("2_sbkvn")
+region = Rect2(800, 1911, 31, 39)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_13348"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fwni7")
+"texture": SubResource("AtlasTexture_8j1wd")
 }],
 "loop": true,
 "name": &"default",
@@ -22,10 +22,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bphml"]
 size = Vector2(12, 15.5)
 
-[node name="Gem" type="Area2D"]
+[node name="energyCell" type="Area2D"]
 script = ExtResource("1_fs7to")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.76837e-07, -2)
+scale = Vector2(0.282258, 0.282258)
 sprite_frames = SubResource("SpriteFrames_13348")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

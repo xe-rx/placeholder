@@ -6,8 +6,16 @@ const JUMP_VELOCITY = -300.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+# used to pause user input in level script
+var level_script
+
+func _ready():
+	level_script = get_parent()
 
 func _physics_process(delta):
+	if level_script.minigame_active:
+		return # Pass all movement physics when minigame is active
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

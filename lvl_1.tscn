@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c3g1jcrcgu8lw" path="res://1-Bit-Sci-Fi(Omniclause)/Monitor/Monitor-Sheet.png" id="2_15e5r"]
 [ext_resource type="Texture2D" uid="uid://dcx8o4p88tfh1" path="res://monochrome_tilemap_transparent.png" id="2_c2qa6"]
 [ext_resource type="PackedScene" uid="uid://bo1knu3vu8k1w" path="res://player.tscn" id="3_4et3v"]
-[ext_resource type="PackedScene" uid="uid://dcbm3id1edfss" path="res://Entities/Collectibles/Gems/emerald_cut/gem.tscn" id="4_u8g8h"]
+[ext_resource type="PackedScene" uid="uid://dcbm3id1edfss" path="res://Entities/Collectibles/Gems/emerald_cut/energyCell.tscn" id="4_u8g8h"]
 [ext_resource type="PackedScene" uid="uid://c1lc3t7sk4pdm" path="res://hud.tscn" id="4_xhert"]
 [ext_resource type="PackedScene" uid="uid://bg8c4lh5ea6s" path="res://door.tscn" id="4_y03ya"]
 [ext_resource type="PackedScene" uid="uid://dii826ss7vipp" path="res://coin.tscn" id="6_h4r08"]
@@ -831,9 +831,9 @@ position = Vector2(18, 218)
 position = Vector2(607, 373)
 level = "res://lvl_2.tscn"
 
-[node name="Gems" type="Node" parent="."]
+[node name="energyCells" type="Node" parent="."]
 
-[node name="Gem" parent="Gems" instance=ExtResource("4_u8g8h")]
+[node name="energyCell" parent="energyCells" instance=ExtResource("4_u8g8h")]
 position = Vector2(355, 596)
 
 [node name="Coins" type="Node" parent="."]

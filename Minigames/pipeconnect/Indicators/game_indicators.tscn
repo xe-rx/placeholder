@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://d06l8dnwo5e3n"]
+
+[ext_resource type="Script" path="res://Minigames/pipeconnect/Indicators/game_indicators.gd" id="1_3r5hi"]
+[ext_resource type="Texture2D" uid="uid://cpts2ihgnvqs7" path="res://Minigames/pipeconnect/Indicators/pipe_indicator.png" id="2_vxwfq"]
+[ext_resource type="Texture2D" uid="uid://cwaeqvwpyntgd" path="res://Minigames/pipeconnect/pipe_sprites.png" id="3_grwd4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_som6w"]
+atlas = ExtResource("2_vxwfq")
+region = Rect2(0, 0, 16, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3pbp"]
+atlas = ExtResource("2_vxwfq")
+region = Rect2(16, 0, 16, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si1l2"]
+atlas = ExtResource("2_vxwfq")
+region = Rect2(32, 0, 16, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r36ak"]
+atlas = ExtResource("3_grwd4")
+region = Rect2(0, 0, 16, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd068"]
+size = Vector2(14.5, 16)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3r5hi")
+indicator_sprites = Array[Texture]([SubResource("AtlasTexture_som6w"), SubResource("AtlasTexture_o3pbp"), SubResource("AtlasTexture_si1l2")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = SubResource("AtlasTexture_r36ak")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.25, 0)
+shape = SubResource("RectangleShape2D_hd068")

@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5cwmwv0ribob"]
+
+[ext_resource type="PackedScene" uid="uid://0nmksqe6ugtd" path="res://UI/Panel/panel.tscn" id="1_2m2o0"]
+[ext_resource type="Script" path="res://Minigames/pipeconnect/pipeconnect_game.gd" id="1_dm1k6"]
+
+[node name="pipeconnect_panel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_dm1k6")
+
+[node name="terminal_panel" parent="." instance=ExtResource("1_2m2o0")]
+layout_mode = 1
+mouse_filter = 2
+
+[node name="Panel" parent="terminal_panel" index="0"]
+mouse_filter = 2
+
+[node name="Panel" parent="terminal_panel/Panel" index="1"]
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="terminal_panel/Panel/Panel" index="0"]
+layout_mode = 1
+scale = Vector2(3, 3)
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 6
+
+[editable path="terminal_panel"]

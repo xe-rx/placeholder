@@ -73,8 +73,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_80weu"]
-radius = 4.0
-height = 8.0
+radius = 5.0
+height = 10.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayg1p"]
 size = Vector2(18, 2)
@@ -89,7 +89,7 @@ animation = &"jump"
 frame_progress = 0.843609
 
 [node name="PlayerCollisionshape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_80weu")
 
