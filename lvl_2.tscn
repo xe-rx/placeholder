@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b4s14fqduhoby"]
+[gd_scene load_steps=15 format=4 uid="uid://b4s14fqduhoby"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_v7btg"]
 [ext_resource type="TileSet" uid="uid://fxiv4t4jhw3l" path="res://tiles.tres" id="2_gweau"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dcbm3id1edfss" path="res://Entities/Collectibles/Gems/emerald_cut/energyCell.tscn" id="3_vr2fn"]
 [ext_resource type="PackedScene" uid="uid://dii826ss7vipp" path="res://coin.tscn" id="4_f85k4"]
 [ext_resource type="PackedScene" uid="uid://b744lydr82tfg" path="res://UI/Energy Bar/bars.tscn" id="4_h7y03"]
+[ext_resource type="PackedScene" uid="uid://bn3pxhr6lroty" path="res://Entities/Traps/lightningtrap.tscn" id="6_8kqr7"]
 [ext_resource type="PackedScene" uid="uid://cgych3jgq5y5" path="res://note.tscn" id="7_vodip"]
 [ext_resource type="PackedScene" uid="uid://bratjbxqjmj7g" path="res://UI/Textbox/textbox.tscn" id="10_w0wpa"]
 [ext_resource type="PackedScene" uid="uid://dlcsihei1ildi" path="res://Journal/journal_page.tscn" id="12_bdk26"]
@@ -44,6 +45,9 @@ offset_bottom = -94.0
 [node name="Player" parent="." instance=ExtResource("2_hjpl8")]
 z_index = 1
 position = Vector2(119, 282)
+
+[node name="lightningTrap" parent="." instance=ExtResource("6_8kqr7")]
+position = Vector2(213, 287)
 
 [node name="energyCells" type="Node" parent="."]
 
