@@ -1,0 +1,72 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dkdtl2ehbnhng"]
+
+[ext_resource type="Texture2D" uid="uid://dfb2q3rs0f62q" path="res://Entities/Traps/Trap3.png" id="1_0cmj3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ajrq"]
+atlas = ExtResource("1_0cmj3")
+region = Rect2(96, 0, 48, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mmrp"]
+atlas = ExtResource("1_0cmj3")
+region = Rect2(144, 0, 48, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hynl4"]
+atlas = ExtResource("1_0cmj3")
+region = Rect2(192, 0, 48, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brjkk"]
+atlas = ExtResource("1_0cmj3")
+region = Rect2(240, 0, 48, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx4tn"]
+atlas = ExtResource("1_0cmj3")
+region = Rect2(288, 0, 48, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba4x5"]
+atlas = ExtResource("1_0cmj3")
+region = Rect2(336, 0, 48, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hat5w"]
+atlas = ExtResource("1_0cmj3")
+region = Rect2(384, 0, 48, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvo6u"]
+atlas = ExtResource("1_0cmj3")
+region = Rect2(0, 0, 48, 67)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ajrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mmrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hynl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brjkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx4tn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba4x5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hat5w")
+}],
+"loop": true,
+"name": &"active",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvo6u")
+}],
+"loop": true,
+"name": &"safe",
+"speed": 16.0
+}]

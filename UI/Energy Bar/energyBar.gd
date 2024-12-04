@@ -1,24 +1,18 @@
 extends TextureRect
 
-@export var player: CharacterBody2D
-@export var energy_bar_sprites: Array[Texture] = []  # Sprites assigned in the Inspector
-var value: int = 0
-var maxEnergy: int = 7
+@export var energy_bar_sprites: Array[Texture] = []
 
 func _ready():
-	update_energy_sprite()
+	if energy_bar_sprites.size() == 0:
+		print("Error: energy_bar_sprites not initialized!")
+		return
 
-# Updates the energy bar
-func update_energyBar():
-	value += 1  # Increment energy
-	value = clamp(value, 0, maxEnergy)  # Ensure it stays within range
-	print("Current energy value: ", value)  # Debugging output to track value
-	
-	update_energy_sprite()  # Update sprite based on value
+	EnergyManager.connect("energy_updated", Callable(self, "_on_energy_updated"))
 
-# Update the energy bar sprite based on the current value
-func update_energy_sprite():
+	_on_energy_updated(EnergyManager.get_energy())
+
+func _on_energy_updated(current_value: int):
+	print(current_value)
 	var num_stages = energy_bar_sprites.size()
-	var stage = value
-	stage = clamp(stage, 0, num_stages - 1)
+	var stage = clamp(current_value, 0, num_stages - 1)
 	self.texture = energy_bar_sprites[stage]

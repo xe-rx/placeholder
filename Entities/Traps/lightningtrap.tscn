@@ -1,95 +1,35 @@
-[gd_scene load_steps=13 format=3 uid="uid://bn3pxhr6lroty"]
+[gd_scene load_steps=5 format=3 uid="uid://bn3pxhr6lroty"]
 
-[ext_resource type="Texture2D" uid="uid://dfb2q3rs0f62q" path="res://Entities/Traps/Trap3.png" id="1_dlmac"]
 [ext_resource type="Script" path="res://Entities/Traps/lightningtrap.gd" id="1_s5nhc"]
+[ext_resource type="SpriteFrames" uid="uid://dkdtl2ehbnhng" path="res://Entities/Traps/lightningtrapanimation.tres" id="2_6mi88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0mm5"]
-size = Vector2(14, 68)
+size = Vector2(12, 68)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ajrq"]
-atlas = ExtResource("1_dlmac")
-region = Rect2(96, 0, 48, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8mmrp"]
-atlas = ExtResource("1_dlmac")
-region = Rect2(144, 0, 48, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hynl4"]
-atlas = ExtResource("1_dlmac")
-region = Rect2(192, 0, 48, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_brjkk"]
-atlas = ExtResource("1_dlmac")
-region = Rect2(240, 0, 48, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sx4tn"]
-atlas = ExtResource("1_dlmac")
-region = Rect2(288, 0, 48, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ba4x5"]
-atlas = ExtResource("1_dlmac")
-region = Rect2(336, 0, 48, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hat5w"]
-atlas = ExtResource("1_dlmac")
-region = Rect2(384, 0, 48, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qvo6u"]
-atlas = ExtResource("1_dlmac")
-region = Rect2(0, 0, 48, 67)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5ais4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0ajrq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8mmrp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hynl4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_brjkk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sx4tn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ba4x5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hat5w")
-}],
-"loop": true,
-"name": &"active",
-"speed": 16.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qvo6u")
-}],
-"loop": true,
-"name": &"safe",
-"speed": 5.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euxhj"]
+size = Vector2(12, 28)
 
 [node name="lightningTrap" type="Node2D"]
+texture_filter = 1
+position = Vector2(300, 300)
 script = ExtResource("1_s5nhc")
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="FullCollision" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_i0mm5")
 
+[node name="HalfCollision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_euxhj")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_5ais4")
+sprite_frames = ExtResource("2_6mi88")
 animation = &"safe"
-frame_progress = 0.66075
-speed_scale = 0.5
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

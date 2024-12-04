@@ -5,7 +5,7 @@ signal energyCells_collected
 func _on_body_entered(body):
 	if body.name == "Player":
 		$GemSfx.play()
-		Global.energyCells_collected += 1
+		
 		energyCells_collected.emit()
 
 		# Disable collision and hide the node

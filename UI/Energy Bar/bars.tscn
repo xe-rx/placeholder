@@ -31,14 +31,15 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_mvem8")
 
-[node name="energyWrapper2" type="VBoxContainer" parent="barWrapper"]
+[node name="pollutionWrapper" type="VBoxContainer" parent="barWrapper"]
 layout_mode = 2
 
-[node name="energyBar" parent="barWrapper/energyWrapper2" instance=ExtResource("1_15kla")]
+[node name="pollutionBar" parent="barWrapper/pollutionWrapper" instance=ExtResource("1_15kla")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+script = null
 
-[node name="energyIcon" type="TextureRect" parent="barWrapper/energyWrapper2"]
+[node name="pollutionIcon" type="TextureRect" parent="barWrapper/pollutionWrapper"]
 layout_mode = 2
 texture = ExtResource("3_55qkr")

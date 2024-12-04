@@ -18,12 +18,11 @@ enum State {
 }
 
 var current_state = State.READY
-var text_queue = []
 
-func _process(float) -> void:
+func _process(delta: float) -> void:
 	match current_state:
 		State.READY:
-			if !text_queue.is_empty():
+			if TextManager.has_text():
 				display_text()
 		State.READING:
 			if Input.is_action_just_pressed("ui_accept"):
@@ -36,20 +35,21 @@ func _process(float) -> void:
 				change_state(State.READY)
 				textbox_container.hide()
 
-func queue_text(next_text):
-	text_queue.push_back(next_text)
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Starting in state:", current_state)
 	hide_textbox()
-	queue_text("In a small village nestled between rolling hills and the shimmering sea, there was a grove of ancient oaks known as the Grove of Silent Oaks.")
-	queue_text("For centuries, the villagers believed the grove to be sacred. It was said that if you sat beneath the canopy and asked a question, the rustling leaves would whisper answers from the deep wisdom of the earth.")
-	queue_text("One day, a young philosopher named Lila came to the grove. She was troubled, for the world seemed out of balance.")
+	TextManager.connect("queue_text_signal", Callable(self, "_on_text_queued"))
+
+# Handle text queued signal
+func _on_text_queued(next_text: String) -> void:
+	if current_state == State.READY:
+		display_text()
 
 # Add text to the textbox and animate it
 func display_text():
-	var text = text_queue.pop_front()
+	var text = TextManager.get_next_text()
+	if text == "":
+		return
 	change_state(State.READING)
 	content.text = text
 	show_textbox()
@@ -59,7 +59,6 @@ func display_text():
 	tween = get_tree().create_tween()
 	tween.tween_property(content, "visible_ratio", 1.0, len(text) * CHAR_READ_RATE)
 	tween.connect("finished", Callable(self, "_on_tween_finished"))
-	tween.finished.connect(self._on_tween_finished)
 
 func _on_tween_finished():
 	change_state(State.FINISHED)
@@ -80,9 +79,9 @@ func show_textbox() -> void:
 func change_state(next_state):
 	match next_state:
 		State.READY:
-			print("Changing from state: ", current_state,"to: ", next_state)
+			print("Changing from state: ", current_state, "to: ", next_state)
 		State.READING:
-			print("Changing from state: ", current_state,"to: ", next_state)
+			print("Changing from state: ", current_state, "to: ", next_state)
 		State.FINISHED:
-			print("Changing from state: ", current_state,"to: ", next_state)
+			print("Changing from state: ", current_state, "to: ", next_state)
 	current_state = next_state

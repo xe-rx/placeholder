@@ -1,6 +1,44 @@
 [
     {
+        "writer":"Karl Marx",
         "title": "Capital, Volume 1, Chapter 15 (The Machiney and Modern Industry)",
         "text": "Capitalist production, by collecting the population in great centres, and causing an ever-increasing preponderance of town population, on the one hand, concentrates the historical motive-power of society; on the other hand, it disturbs the circulation of matter between man and the soil, i.e., prevents the return to the soil of its elements consumed by man in the form of food and clothing; it therefore violates the conditions necessary to lasting fertility of the soil. By this action, it destroys at the same time the health of the town labourer and the intellectual life of the rural labourer."
+    },
+    {
+        "writer":"Immanuel Kant",
+        "title": "Groundwork for the Metaphysics of Morals",
+        "text": "Act only according to that maxim whereby you can at the same time will that it should become a universal law.",
+        "context":"Kant's categorical imperative emphasizes universalizability. If we act in ways that harm the planet (e.g., emitting excessive greenhouse gases), we cannot rationally will that everyone else acts similarly without causing catastrophic consequences. Thus, actions contributing to climate change would fail Kant's test of universalizability."
+    },
+    {
+        "writer":"Jeremy Bentham",
+        "title":"Intro to the Principles of Morals and Legislation (The Greatest Happiness Principle)",
+        "text":"It is the greatest happiness of the greatest number that is the measure of right and wrong.",
+        "context":"Bentham's utilitarianism argues that the moral worth of an action is determined by its ability to increase overall happiness or reduce suffering. Climate change, by causing widespread suffering through natural disasters, displacement, and ecosystem destruction, violates this principle. Actions to mitigate climate change align with utilitarian goals by maximizing happiness and minimizing harm."
+    },
+   {
+        "writer":"",
+        "title":"",
+        "text":""
+    },
+   {
+        "writer":"",
+        "title":"",
+        "text":""
+    },
+   {
+        "writer":"",
+        "title":"",
+        "text":""
+    },
+   {
+        "writer":"",
+        "title":"",
+        "text":""
+    },
+   {
+        "writer":"",
+        "title":"",
+        "text":""
     }
 ]

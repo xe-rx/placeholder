@@ -18,10 +18,16 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://global.gd"
+EnergyManager="*res://energy_manager.gd"
+TextManager="*res://text_manager.gd"
 
 [display]
 
 window/stretch/mode="viewport"
+
+[editor]
+
+version_control/autoload_on_startup=true
 
 [input]
 

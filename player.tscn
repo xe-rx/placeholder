@@ -112,11 +112,10 @@ volume_db = -35.0
 pitch_scale = 0.8
 
 [node name="Dialogue" type="Label" parent="."]
-visible = false
 texture_filter = 1
-offset_left = -25.0
+offset_left = -31.0
 offset_top = -29.0
-offset_right = 492.0
+offset_right = 589.0
 offset_bottom = 111.0
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("4_j8lsi")
