@@ -83,6 +83,7 @@ animations = [{
 [node name="Door" type="Area2D"]
 position = Vector2(-5, -4)
 script = ExtResource("1_ci8y5")
+level = "res://1.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, 3)
@@ -92,7 +93,6 @@ shape = SubResource("RectangleShape2D_0tx7k")
 position = Vector2(5, 3)
 sprite_frames = SubResource("SpriteFrames_jx5e6")
 animation = &"opening"
-frame = 5
-frame_progress = 1.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

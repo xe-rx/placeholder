@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bo1knu3vu8k1w"]
+[gd_scene load_steps=14 format=3 uid="uid://bo1knu3vu8k1w"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gddcf"]
 [ext_resource type="Texture2D" uid="uid://dcx8o4p88tfh1" path="res://monochrome_tilemap_transparent.png" id="2_3dbod"]
@@ -73,11 +73,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_80weu"]
-radius = 5.0
-height = 10.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayg1p"]
-size = Vector2(18, 2)
+radius = 4.0
+height = 14.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -2)
@@ -90,12 +87,7 @@ frame_progress = 0.843609
 
 [node name="PlayerCollisionshape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
-rotation = 1.5708
 shape = SubResource("CapsuleShape2D_80weu")
-
-[node name="ExtraPlayerCollisionshape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
-shape = SubResource("RectangleShape2D_ayg1p")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 3)

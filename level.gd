@@ -15,6 +15,8 @@ func _process(_delta: float) -> void:
 
 func parse_energyCells_connect():
 	print("Parsing energy cells")
+	if !$energyCells:
+		return
 	for energyCell in $energyCells.get_children():
 		energyCell.energyCells_collected.connect(_on_energyCells_collected)
 
@@ -22,7 +24,7 @@ func _on_energyCells_collected():
 	EnergyManager.add_energy(1)
 
 func _on_door_player_entered(level):
-	print_debug("reached level script")
+	print("changing scene")
 	get_tree().change_scene_to_file(level)
 
 func _on_terminal_interacted() -> void:
